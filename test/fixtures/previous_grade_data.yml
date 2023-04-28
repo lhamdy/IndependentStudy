@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  class_: MyString
+  subject: MyString
+  catalog: MyString
+  title: MyString
+  units: 1
+  grading_basis: MyString
+  grade: MyString
+  term: 1
+  roster_status: MyString
+
+two:
+  class_: MyString
+  subject: MyString
+  catalog: MyString
+  title: MyString
+  units: 1
+  grading_basis: MyString
+  grade: MyString
+  term: 1
+  roster_status: MyString

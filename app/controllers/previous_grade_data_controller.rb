@@ -1,0 +1,2 @@
+class PreviousGradeDataController < ApplicationController
+end
