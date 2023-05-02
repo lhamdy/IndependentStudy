@@ -1,0 +1,23 @@
+Commands I used on command line:
+
+
+To set up FallCourse db:
+
+rails generate resource fall_courses 
+
+rails db:migrate
+
+rails console
+
+FallCourse.load_from_file
+
+
+To set up previous_grade_data db:
+
+rails generate resource previous_grade_data
+
+rails db:migrate
+
+rails console
+
+PreviousGradeDatum.load_from_file

@@ -1,0 +1,11 @@
+<h1>Fall Courses</h1>
+
+<ul>
+  <% @fall_courses.each do |fall_course| %>
+    <li>
+        <a href="/fall_courses/<%= fall_course.id %>">
+            <%= fall_course.title %>
+        </a>  
+    </li>
+  <% end %>
+</ul>
