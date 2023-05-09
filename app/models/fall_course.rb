@@ -1,5 +1,8 @@
 require 'json'
 class FallCourse < ApplicationRecord
+
+    has_many :students 
+    
     def self.load_from_file
         json_data = File.read("/Users/leenahhamdy/Desktop/IndependentStudy/WebRails/myapp/classes.json")
         courses_data = JSON.parse(json_data)

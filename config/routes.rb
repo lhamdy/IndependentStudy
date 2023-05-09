@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   
   get "/fall_courses", to: "fall_courses#index"
   get "/fall_courses/:id", to: "fall_courses#show"
+  get "/students", to: "students#index"
+  get "/students/:sid", to: "students#show"
   # Defines the root path route ("/")
   # root "articles#index"
 end

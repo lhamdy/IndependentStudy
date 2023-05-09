@@ -1,0 +1,12 @@
+<h1>Students</h1>
+
+<ul>
+  <% @students.map(&:sid).uniq.each do |sid| %>
+    <li>
+        <a href="/students/<%= sid %>">
+            <%= sid %>
+            
+        </a>  
+    </li>
+  <% end %>
+</ul>
