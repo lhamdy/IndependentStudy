@@ -1,0 +1,16 @@
+<h1>Manning CICS Courses</h1>
+
+<%= link_to "Add a New Course", new_course_path %>
+
+<ul>
+  <% @courses.each do |course| %>
+    <li>
+        <a href="/courses/<%= course.id %>">
+            <%= course.title %>
+            
+        </a>  
+    </li>
+  <% end %>
+</ul>
+
+

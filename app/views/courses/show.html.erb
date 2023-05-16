@@ -1,0 +1,37 @@
+<h1><%= @course.title %></h1>
+
+<h3> Description </h3>
+<p><%= @course.description %></p>
+
+<table>
+    <tbody>
+    
+    <tr>
+        <td>Course ID</td>
+        <td><%= @course.cid %></td>
+        
+      </tr>
+      <tr>
+        <td>Credits</td>
+        <td><%= @course.credits %></td>
+        
+      </tr>
+      <tr>
+        <td>Prerequisites</td>
+        <td><%= @course.prereqs %></td>
+      </tr>
+    
+  </tbody>
+
+</table>
+
+
+
+
+<%= link_to "Edit this course", edit_course_path %>
+<br>
+<%= link_to "Delete course", course_path(@course), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+

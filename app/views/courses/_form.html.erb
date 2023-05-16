@@ -1,0 +1,38 @@
+<%= form_with model: @course do |form| %>
+    <div>
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+    </div>
+  
+    <div>
+      <%= form.label :cid %><br>
+      <%= form.text_area :cid %>
+    </div>
+  
+    <div>
+      <%= form.label :instructor %><br>
+      <%= form.text_area :instructor %>
+    </div>
+    
+    <div>
+      <%= form.label :credits %><br>
+      <%= form.text_area :credits %>
+    </div>
+  
+  
+    <div>
+      <%= form.label :prereqs %><br>
+      <%= form.text_area :prereqs %>
+    </div>
+  
+  
+  
+    <div>
+      <%= form.label :description %><br>
+      <%= form.text_area :description %>
+    </div>
+  
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
