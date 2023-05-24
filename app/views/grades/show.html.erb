@@ -1,9 +1,9 @@
-<h1> Student <%= @student.sid %></h1>
+<h1> Student <%= @student.sid %></h1> 
 
 <h2> Previous courses: </h2>
 
 
-<% if @show_checkboxes %>
+<% if @show_checkboxes %> <!-- shows checkboxes when the delete grades option is selected, allowing user to check the grades they want to delete -->
   <%= form_tag delete_grades_path(sid: @student.sid), method: :delete do %>
     <%= hidden_field_tag :sid, @student.sid %>
     <div class="grades-container">
@@ -26,18 +26,18 @@
                 <td>No course associated</td>
               <% end %>
               <td><%= grade_.grade %></td>
-              <td><%= check_box_tag "grade_ids[]", grade_.id %></td>
+              <td><%= check_box_tag "grade_ids[]", grade_.id %></td> <!-- puts in checkboxes for user to select grades they want to delete -->
             </tr>
           <% end %>
         </tbody>
       </table>
       <%= submit_tag "Delete Selected Grades" %>
       <br>
-      <%= link_to "Cancel", grade_path(sid: @student.sid), method: :get %>
+      <%= link_to "Cancel", grade_path(sid: @student.sid), method: :get %> <!-- allows user to cancel if they don't want to delete grades -->
     </div>
   <% end %>
-<% else %>
-  <table class="grades-table">
+<% else %> <!-- renders the normal view of a students grades without checkboxes -->
+  <table class="grades-table"> <!-- shows a table of the students grades -->
     <thead>
       <tr>
         <th> Course ID </th>
@@ -51,20 +51,20 @@
           <td><%= grade_.cid %></td>
           <% if grade_.course %>
             <td><%= grade_.course.title %></td>
-          <% else %>
-            <td>No course associated</td>
+          <% else %> <!-- if the course is not in the courses table -->
+            <td>No course associated</td> 
           <% end %>
           <td><%= grade_.grade %></td>
-          <td><%= link_to "Edit", edit_grade_path(id: grade_.id), method: :get %></td>
+          <td><%= link_to "Edit", edit_grade_path(id: grade_.id), method: :get %></td> <!-- redirects to form to edit an individual grade -->
         </tr>
       <% end %>
     </tbody>
   </table>
   <br>
-  <%= link_to "Delete Grades", show_checkboxes_grades_path(sid: @student.sid), method: :get %>
+  <%= link_to "Delete Grades", show_checkboxes_grades_path(sid: @student.sid), method: :get %> <!-- redirects to showing checkboxes and allowing user to delete grades -->
 <% end %>
 
 <br>
-<%= link_to "Add a new grade for student", grades_new_path %>
+<%= link_to "Add a new grade for student", grades_new_path %> <!-- redirects to form to add a new grade for a student -->
 <br>
-<%= link_to "Back to all students", grades_path %>
+<%= link_to "Back to all students", grades_path %> <!-- redirects to main students page -->

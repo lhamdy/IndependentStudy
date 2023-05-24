@@ -1,6 +1,6 @@
-<h1>Students</h1>
+<h1>Students</h1> <!-- shows a list of all the students in the database -->
 
-<%= link_to "Home", root_path %>
+<%= link_to "Home", root_path %> <redirects to home page -->
 
 <ul>
   <% @grades.map(&:sid).uniq.each do |sid| %>

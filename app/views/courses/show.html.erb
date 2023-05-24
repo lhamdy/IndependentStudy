@@ -1,4 +1,4 @@
-<h1><%= @course.title %></h1>
+<h1><%= @course.title %></h1> <!-- shows an individual selected course -->
 
 <h3> Description </h3>
 <p><%= @course.description %></p>
@@ -30,12 +30,12 @@
 
 
 
-<%= link_to "Edit this course", edit_course_path %>
+<%= link_to "Edit this course", edit_course_path %> <!-- redirects to edit course form -->
 <br>
-<%= link_to "Delete course", course_path(@course), data: {
+<%= link_to "Delete course", course_path(@course), data: { 
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
-                  } %>
+                  } %> <!-- deletes course -->
 <br>
-<%= link_to "Back to all courses", courses_path %>
+<%= link_to "Back to all courses", courses_path %> <!-- redirects to main course page -->
 

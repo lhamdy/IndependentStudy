@@ -1,4 +1,4 @@
-<%= form_with model: @grade do |form| %>
+<%= form_with model: @grade do |form| %> <!-- generic form used by new and edit -->
     <div>
       <%= form.label :"Student ID" %><br>
       <%= form.text_field :sid %>
@@ -24,4 +24,4 @@
     </div>
   <% end %>
 
-  <%= link_to "Cancel", grade_path(sid: @grade.sid), method: :get %>
+  <%= link_to "Cancel", grade_path(sid: @grade.sid), method: :get %> <!-- redirects to the students show page -->

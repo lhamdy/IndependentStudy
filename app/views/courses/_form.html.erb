@@ -1,4 +1,4 @@
-<%= form_with model: @course do |form| %>
+<%= form_with model: @course do |form| %> <!-- generic form used by edit and new -->
     <div>
       <%= form.label :title %><br>
       <%= form.text_field :title %>
@@ -6,32 +6,28 @@
   
     <div>
       <%= form.label :cid %><br>
-      <%= form.text_area :cid %>
+      <%= form.text_field :cid %>
     </div>
   
     <div>
       <%= form.label :instructor %><br>
-      <%= form.text_area :instructor %>
+      <%= form.text_field :instructor %>
     </div>
     
     <div>
       <%= form.label :credits %><br>
-      <%= form.text_area :credits %>
+      <%= form.text_field :credits %>
     </div>
   
   
     <div>
       <%= form.label :prereqs %><br>
-      <%= form.text_area :prereqs %>
+      <%= form.text_field :prereqs %>
     </div>
 
-
-  
-  
-  
     <div>
       <%= form.label :description %><br>
-      <%= form.text_area :description %>
+      <%= form.text_field :description %>
     </div>
   
     <div>
