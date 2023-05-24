@@ -36,5 +36,28 @@ class Course < ApplicationRecord
             end
         end
     end
+
+    def self.load_prereqs
+        json_data = File.read("/Users/leenahhamdy/Desktop/IndependentStudy/WebRails2/myapp/classes.json")
+        courses_data = JSON.parse(json_data)
+        courses_data.each do |key, value|
+            courses_data[key].length.times do |i|
+                cid = courses_data[key][i]['cid']
+                course = Course.find_by(cid: cid) # Find the course by matching cid
+                prereqs = courses_data[key][i]['prereqs']
+                if course
+                    prereqs = courses_data[key][i]['prereqs']
+                    course.prereqs = prereqs
+                    course.save
+                    puts prereqs
+                    puts cid
+                    puts "Prerequisites updated for course with cid: #{cid}"
+                  else
+                    puts "Course with cid: #{cid} not found."
+                  end
+                sleep(1)
+            end
+        end
+    end
 end
 

@@ -1,3 +1,5 @@
 <h1> Edit course </h1>
 
 <%= render "form", course: @course %>
+
+<%= link_to "Cancel", course_path(id: @course.id), method: :get %>

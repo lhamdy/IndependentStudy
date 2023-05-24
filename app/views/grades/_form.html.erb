@@ -1,0 +1,27 @@
+<%= form_with model: @grade do |form| %>
+    <div>
+      <%= form.label :"Student ID" %><br>
+      <%= form.text_field :sid %>
+    </div>
+  
+    <div>
+      <%= form.label :"Course ID" %><br>
+      <%= form.text_field :cid %>
+    </div>
+  
+    <div>
+      <%= form.label :Grade %><br>
+      <%= form.text_field :grade %>
+    </div>
+  
+    <div>
+      <%= form.label :Term %><br>
+      <%= form.text_field :term %>
+    </div>
+  
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+
+  <%= link_to "Cancel", grade_path(sid: @grade.sid), method: :get %>

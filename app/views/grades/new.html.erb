@@ -1,27 +1,3 @@
 <h1>Enter new grade data</h1>
 
-<%= form_with model: @grade do |form| %>
-  <div>
-    <%= form.label :"Student ID" %><br>
-    <%= form.text_field :sid %>
-  </div>
-
-  <div>
-    <%= form.label :"Course ID" %><br>
-    <%= form.text_area :cid %>
-  </div>
-
-  <div>
-    <%= form.label :Grade %><br>
-    <%= form.text_area :grade %>
-  </div>
-
-  <div>
-    <%= form.label :Term %><br>
-    <%= form.text_area :term %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+<%= render "form", grade: @grade %>
