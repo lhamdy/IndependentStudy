@@ -1,0 +1,21 @@
+<h1>Available Courses for Student <%= @student_id %></h1>
+<p> Student <%= @student_id %> fulfills some or all of the prerequisites for the following courses: </p>
+<% if @available_courses.any? %>
+  <table>
+    <thead>
+        <tr>
+            <th> Course ID </th>
+            <th> Course Title </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @available_courses.each do |course| %>
+            <tr>
+                <td> <%= course.cid %></td>
+                <td> <%= course.title %></td>
+            </tr>
+        <% end %>
+    </tbody>        
+<% else %>
+  <p>No available courses.</p>
+<% end %>

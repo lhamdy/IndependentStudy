@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get "/grades/:sid/show_checkboxes", to: "grades#show_checkboxes", as: :show_checkboxes_grades
   get "grades/:id/edit", to: "grades#edit", as: :edit_grade
   patch "/grades/:id", to: "grades#update", as: :update_grade
+  get "grades/:sid/available_courses", to: "grades#available_courses", as: :available_courses
   delete "/grades/:sid", to: "grades#destroy", as: :delete_grades
   
 end

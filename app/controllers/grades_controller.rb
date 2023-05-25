@@ -4,7 +4,7 @@ class GradesController < ApplicationController
     end
 
     def show
-        puts params[:sid]
+        
         @student = Grade.find_by(sid: params[:sid])
         @grades_ = Grade.where(sid: params[:sid])
        
@@ -57,6 +57,12 @@ class GradesController < ApplicationController
         Grade.where(id: selected_grade_ids).destroy_all
       
         redirect_to grade_path(sid: params[:sid]), notice: "Grades successfully deleted"
+    end
+
+    def available_courses
+        @student_id = params[:sid]
+        @taken_courses = Grade.where(sid: @student_id).pluck(:cid)
+        @available_courses = Course.where.not(cid: @taken_courses).select { |course| course.prereqs.present? && course.prereqs_satisfied?(course, @taken_courses) }
     end
       
 

@@ -14,14 +14,11 @@
       <%= form.text_field :grade %>
     </div>
   
-    <div>
-      <%= form.label :Term %><br>
-      <%= form.text_field :term %>
-    </div>
+    
   
     <div>
       <%= form.submit %>
     </div>
   <% end %>
 
-  <%= link_to "Cancel", grade_path(sid: @grade.sid), method: :get %> <!-- redirects to the students show page -->
+  

@@ -5,7 +5,7 @@ class Grade < ApplicationRecord
 
     def self.load_from_file
         file_path = "/Users/leenahhamdy/Desktop/IndependentStudy/WebRails2/myapp/fake_class_data.csv"
-        ignored_columns = ['class_', 'title', 'units', 'grading_basis', 'roster_status'] # Replace with the actual column names to be ignored
+        ignored_columns = ['class_', 'title', 'units', 'grading_basis', 'roster_status'] 
 
         CSV.foreach(file_path, headers: true) do |row|
         grade_data = row.to_hash
@@ -13,4 +13,6 @@ class Grade < ApplicationRecord
         Grade.create(grade_data)
         end
     end
+
+    
 end

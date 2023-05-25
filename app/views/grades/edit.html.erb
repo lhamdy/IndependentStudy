@@ -2,3 +2,4 @@
 
 <%= render "form", grade: @grade %>
 
+<%= link_to "Cancel", grade_path(sid: @grade.sid), method: :get %> <!-- redirects to the students show page -->

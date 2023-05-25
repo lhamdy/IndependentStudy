@@ -18,7 +18,23 @@
       </tr>
       <tr>
         <td>Prerequisites</td>
-        <td><%= @course.prereqs %></td>
+        
+        <% if @course.prereqs %>
+          <td>
+            
+            <% prereqs_string = @course.prereqs.gsub(/(\w+\s+\d+\w*)/, '"\1"') %>
+            <% prereqs_array = eval(prereqs_string) %>
+            <% prereqs_array.each_with_index do |prereq_group, group_index| %>
+              <% prereq_group.each_with_index do |prereq, prereq_index| %>
+                <%= prereq %>
+                <%= ' and ' if prereq_index < prereq_group.length - 1 %>
+              <% end %>
+              <%= ' or ' if group_index < prereqs_array.length - 1 %>
+            <% end %>
+          </td>
+        <% else %>
+          <td>No prerequisites for this course</td>
+        <% end %>
       </tr>
     
   </tbody>

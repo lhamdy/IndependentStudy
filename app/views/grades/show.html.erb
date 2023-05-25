@@ -67,4 +67,6 @@
 <br>
 <%= link_to "Add a new grade for student", grades_new_path %> <!-- redirects to form to add a new grade for a student -->
 <br>
+<%= link_to "See available courses", available_courses_path(sid: @student.sid), method: :get %> <!-- see courses a student fulfills prerequisites for -->
+<br>
 <%= link_to "Back to all students", grades_path %> <!-- redirects to main students page -->
