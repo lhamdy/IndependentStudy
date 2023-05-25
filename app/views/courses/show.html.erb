@@ -19,7 +19,10 @@
       <tr>
         <td>Prerequisites</td>
         
-        <% if @course.prereqs %>
+        <% if @course.prereqs == "" or @course.prereqs == "[]"%>
+          <td>No prerequisites for this course</td>
+        
+        <% elsif @course.prereqs %>
           <td>
             
             <% prereqs_string = @course.prereqs.gsub(/(\w+\s+\d+\w*)/, '"\1"') %>
@@ -32,6 +35,7 @@
               <%= ' or ' if group_index < prereqs_array.length - 1 %>
             <% end %>
           </td>
+        
         <% else %>
           <td>No prerequisites for this course</td>
         <% end %>
