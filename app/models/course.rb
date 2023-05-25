@@ -34,7 +34,6 @@ class Course < ApplicationRecord
         end
     end
 
-
     def prereqs_satisfied?(course, taken_courses)
         prereqs_string = self.prereqs.gsub(/(\w+\s+\d+\w*)/, '"\1"')
         prereqs_array = eval(prereqs_string)

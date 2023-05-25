@@ -1,4 +1,5 @@
 <h1>Available Courses for Student <%= @student_id %></h1>
+<%= link_to "Back to student page", grade_path(sid: @student_id), method: :get %>
 <p> Student <%= @student_id %> fulfills some or all of the prerequisites for the following courses: </p>
 <% if @available_courses.any? %>
   <table>
@@ -19,3 +20,4 @@
 <% else %>
   <p>No available courses.</p>
 <% end %>
+
